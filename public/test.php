@@ -1,0 +1,1 @@
+<?phpecho '<html><head></head><body>    ';    echo 'Current PHP version: ' . phpversion();    echo '</body></html>';?>
