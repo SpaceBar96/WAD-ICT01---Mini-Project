@@ -54,32 +54,27 @@ class UserController extends Controller
     function register(Request $req)
     {
         // return $req->input();
-        // try {
+        try {
             DB::insert('insert into users
             (name, email, password, created_at)
             values (?,?,?,?)',
             [$req->fullname,$req->email,$req->password, now()]);
-        // }
-
-        // catch (\Exception) {
-        //     return "Failed to register";
-        // }
-        // return "Successfully register";
-        return redirect('login' .$req->id. '$success=1');
+        }
+        catch (\Exception) {
+            return "Failed to register";
+        }
+            return view('login');
     }
 
     function listuser()
     {
-        return view('viewuser',['users' => DB::table('users')->paginate(10)]);
+        return view('viewuser',['users' => DB::table('users')->paginate(5)]);
     }
 
     function deleteuser(Request $req)
     {
         //return $req->input();
         DB::table('users')->where('id', $req->rid)->delete();
-
-        // return "Successfully deleted";
-        // return view('viewuser');
         return redirect('userlist?rid='.$req->rid. '&deleted=1');
     }
 

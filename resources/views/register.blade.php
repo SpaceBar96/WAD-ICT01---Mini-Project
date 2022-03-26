@@ -24,7 +24,6 @@
 
   </head>
   <body class="text-center">
-    
 <main class="form-signin">
   <form class="container" action="register" method="post">
   @csrf

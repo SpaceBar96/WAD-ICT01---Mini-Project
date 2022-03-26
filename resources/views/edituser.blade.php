@@ -10,7 +10,8 @@ input {
   box-sizing: border-box;
 }
 </style>
-<div class="container" style="border-radius:5px; background-color:#f2f2f2; padding:20px;">
+
+<div class="container" style="border-radius:5px; background-color:#f2f2f2; padding:20px; margin-top:20px">
 
 <form action="useredit?rid={{ Request::get('rid') }}" method="post">
 @csrf
@@ -26,7 +27,7 @@ input {
 
 <div>
     <label style="font-size:14px; font-weight:bold;" for="exampleInputPassword1" class="form-label">Password</lable>
-    <input maxlength="100" value="{{ $users->password }}" type="text" name="password" id="exampleInputPassword1">
+    <input maxlength="100" value="{{ $users->password }}" type="password" name="password" id="exampleInputPassword1">
 </div>
 
 <button type="submit" style="width:80px; background-color: #4CAF50; color: white;padding:5px 12px;

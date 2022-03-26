@@ -10,3 +10,21 @@
   vertical-align: -.125em;
   fill: currentColor;
 }
+
+img {
+  margin-left: 10px;
+}
+
+text {
+  margin-left: 10px;
+}
+
+ul {
+  margin-right: 10px;
+}
+
+#footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+}

@@ -2,6 +2,6 @@
 @if(session()->has('user'))
     {{View:: make('user')}}
 @else
-    @yield('home')
+    @yield('login')
 @endif
 </div>

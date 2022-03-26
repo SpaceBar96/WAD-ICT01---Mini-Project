@@ -5,6 +5,7 @@
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/bootstrap/css/footers.css" rel="stylesheet">
     <link href="/bootstrap/css/headers.css" rel="stylesheet">
+    <link href="/bootstrap/css/carousel.css" rel="stylesheet">
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/bootstrap/js/cheatsheet.js"></script>
 
@@ -69,12 +70,11 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/home" class="nav-link px-2 text-white">Home</a></li>
           <li><a href="/userlist" class="nav-link px-2 text-white">User List</a></li>
+          <li><a class="nav-link px-2">
+          Hi {{ session()->get('user')->name }}, welcome !</a></li>
         </ul>
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="userlist" method="post">
-        @csrf
-          <input value="{{request()->input('search')}}" name="search" type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-        </form>
+
 
         <div class="text-end">
         <button onclick="window.location.href='/editmyuser?rid={{ session()->get('user')->id }}'" type="button" class="btn btn-warning">Profile</button>
@@ -83,4 +83,3 @@
       </div>
     </div>
   </header>
-<br/>
